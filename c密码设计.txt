@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int i = 0;
+	int password[20] = { 0 };
+	int secure[20] = { 0 };
+	printf("请创建一个密码：>");
+	scanf("%s", password);
+	printf("密码创建成功！\n");
+	for (i = 0; i < 3; i++)
+	{
+		printf("请输入密码：>");
+		scanf("%s", secure);
+		if (strcmp(password, secure) == 0)
+		{
+			printf("密码正确");
+			break;
+		}
+		else
+			printf("密码错误请重新输入\n");
+	}
+	if (i == 3)
+	{
+		printf("密码错误次数过多，程序已锁定！！");
+	}
+	return 0;
+}
